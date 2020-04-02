@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Trading console - Trading Tips by Trading Bots</title>
+  <!-- MDB icon -->
+  <!-- <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon"> -->
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+
+  <link rel="stylesheet" href="MDtables/css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="MDtables/css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="MDtables/css/style.css">
+  <!-- MDBootstrap Datatables  -->
+  <link href="MDtables/css/addons/datatables.min.css" rel="stylesheet">
+  <link href="MDtables/css/addons/datatables-select.min.css" rel="stylesheet">
+  <!--Moment JS-->
+  <script src="assets/js/moment.js"></script>
+   <!-- jQuery -->
+  <script type="text/javascript" src="MDtables/js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="MDtables/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="MDtables/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="MDtables/js/mdb.min.js"></script>
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript"></script>
+  <!-- MDBootstrap Datatables  -->
+  <script type="text/javascript" src="MDtables/js/addons/datatables.min.js"></script>
+  <script type="text/javascript" src="MDtables/js/addons/datatables-select.min.js"></script>  
+  <!-- JQuery confirm -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+
+</head>
+<body>
+
+  <!-- Start your project here-->  
+ 
+ 
+    <div class="container">  <!-- Container to wrap the entire screen-->
+
+          <!--********************************************************************-->
+          <!--First row contains the heading / information about this page        -->
+          <!--********************************************************************-->
+
+          <div class="row my-3 mb-0">
+              <div class="col-sm-1"></div>  <!--formatting purposes only-->
+              <div class="col-sm-10">
+                <div class="view view-cascade gradient-card-header blue-gradient narrower py-2 mx-0 mb-3 d-flex justify-content-between align-items-center">
+                    <div>
+                      <button id="back" type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+                        <i class="fas fa-arrow-circle-left"></i>
+                      </button>
+                    </div>
+              
+                      <a href="" class="white-text mx-3">Editing a trading strategy</a>
+                      
+                      <div>
+                        <button id="edit-stg" type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+                          <i class="fas fa-save"></i>
+                        </button>
+                      </div>
+                </div>
+               </div>
+                <div class="col-sm-1"></div>  <!--formatting purposes only-->
+           </div>  <!-- First row ends here-->
+
+          <!--**********************************************-->
+          <!--Second row asks name and trading description  -->
+          <!--**********************************************-->
+
+          <div class="row">
+              <div class="col-sm-1"></div>  <!--formatting purposes only-->
+
+              <div class="col-sm-10">
+
+                  <div class="container border rounded-lg mx-1 pt-2">
+                        <div class="input-group mb-3">  <!-- Strategy name-->
+                                <div class="input-group-prepend">
+                                      <span class="input-group-text" id="strat-name-text">Edit strategy name (max 10 characters) </span>
+                                </div>
+                                <input type="text" id="strat-name"  class="form-control">
+                        </div>
+
+                        <div class="input-group mb-3">  <!-- Strategy description-->
+                              <div class="input-group-prepend">
+                                    <span class="input-group-text" id="strat-desc-text">Edit strategy description (max 50 chars)</span>
+                              </div>
+                             <input id="strat-desc" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="strat-desc-text">
+                        </div>
+                    <div>
+                    
+                  </div>
+
+              <div class="col-sm-1"></div>  <!--formatting purposes only-->
+          </div>  <!--Second row ends here-->
+
+          <div class="container border ml-1 my-3 rounded-lg">  <!-- wrapping for 3 and 4th row-->
+
+          <!--******************************************************************************************-->
+          <!--Third row shows headings for what key indicators will use, and their weight in the index  -->
+          <!--*******************************************************************************************-->
+
+                <div class="row my-3">
+                  <div class="col-sm-1"></div>  <!-- just for formatting-->
+                  <div class="col-sm-5 bg-info font-weight-bold text-center">Edit technical Indicator</div>
+                  <div class="col-sm-5 bg-info font-weight-bold text-center">Edit weight (0-100%)</div>
+                  <div class="col-sm-1"></div>  <!-- just for formatting-->
+                </div>  <!--third row ends here-->
+
+          <!--*************************************************************-->
+          <!--Fourth row has inputs       for the relative strength index  -->
+          <!--*************************************************************-->
+
+                <div class="row">
+
+                      <div class="col-sm-2"></div>  <!-- for formatting only-->
+
+                      <div class="col-sm-4">
+                           <div class="form-check">  <!--check box 1-->
+                                <input class="form-check-input" type="checkbox" id="adx-ok" value="option1" checked>
+                                <label class="form-check-label" for="adx-ok">Average Directional Index</label>
+                           </div>  <!--check box 1-->
+                      </div>
+
+                      <div class="col-sm-3">
+                           <form>
+                              <div class="form-group text-center">
+                                  <input type="range" class="custom-range" id="adx-slider" min="0" max="100" value="25">
+                                </div>
+                            </form>
+                      </div>
+
+                      <div class="col-sm-2">
+                        <div><b id="adx-pctg"></b></div>  
+                      </div>
+
+                      <div class="col-sm-1"></div>  <!-- for formatting only-->
+
+                </div> <!-- fourth row stops here-->
+                
+          <!--********************************************************************************-->
+          <!--Fifth row has inputs for the relative strength index index technical indicator  -->
+          <!--********************************************************************************-->
+
+                <div class="row">
+
+                      <div class="col-sm-2"></div>  <!-- for formatting only-->
+
+                      <div class="col-sm-4">
+                          <div class="form-check">  <!--check box 1-->
+                                <input class="form-check-input" type="checkbox" id="rsi-ok" value="option2" checked>
+                                <label class="form-check-label" for="rsi-ok">Relative Strength Index</label>
+                          </div>  <!--check box 1-->
+                      </div>
+
+                      <div class="col-sm-3">
+                          <form>
+                              <div class="form-group text-center">
+                                  <input type="range" class="custom-range" id="rsi-slider" min="0" max="100" value="25">
+                                </div>
+                            </form>
+                      </div>
+
+                      <div class="col-sm-2">
+                        <div><b id="rsi-pctg"></b></div>  
+                      </div>
+
+                      <div class="col-sm-1"></div>  <!-- for formatting only-->
+
+                </div> <!-- fifth row stops here-->
+
+          <!--*********************************************************************************-->
+          <!-- Sixth row has inputs for the stochastic RSI technical indicator  -->
+          <!--*********************************************************************************-->
+
+                <div class="row">
+
+                      <div class="col-sm-2"></div>  <!-- for formatting only-->
+
+                      <div class="col-sm-4">
+                          <div class="form-check">  <!--check box 1-->
+                                <input class="form-check-input" type="checkbox" id="srsi-ok" value="option3" checked>
+                                <label class="form-check-label" for="srsi-ok">Stochastic RSI</label>
+                          </div>  <!--check box 1-->
+                      </div>
+
+                      <div class="col-sm-3">
+                          <form>
+                              <div class="form-group text-center">
+                                  <input type="range" class="custom-range" id="srsi-slider" min="0" max="100" value="25">
+                                </div>
+                            </form>
+                      </div>
+
+                      <div class="col-sm-2">
+                        <div><b id="srsi-pctg"></b></div>  
+                      </div>
+
+                      <div class="col-sm-1"></div>  <!-- for formatting only-->
+
+                </div> <!-- sixth row stops here-->
+
+          <!--*********************************************************************************-->
+          <!-- Seventh row has inputs for the stochastic RSI technical indicator  -->
+          <!--*********************************************************************************-->
+
+          <div class="row">
+
+                <div class="col-sm-2"></div>  <!-- for formatting only-->
+
+                <div class="col-sm-4">
+                    <div class="form-check">  <!--check box 1-->
+                          <input class="form-check-input" type="checkbox" id="mom-ok" value="option4" checked>
+                          <label class="form-check-label" for="mom-ok">Momentum</label>
+                    </div>  <!--check box 1-->
+                </div>
+
+                <div class="col-sm-3">
+                    <form>
+                        <div class="form-group text-center">
+                            <input type="range" class="custom-range" id="mom-slider" min="0" max="100" value="25">
+                          </div>
+                      </form>
+                </div>
+
+                <div class="col-sm-2">
+                  <div><b id="mom-pctg"></b></div>  
+                </div>
+
+                <div class="col-sm-1"></div>  <!-- for formatting only-->
+
+          </div> <!-- sixth row stops here-->
+
+        </div>  <!--3rd to 7th row wrapping-->
+
+    </div>   <!-- screen wrapper-->
+ 
+ 
+  <!-- End your project here-->
+
+ 
+
+  <script src="assets/js/trading-main-edit.js"></script>
+
+
+</body>
+</html>
